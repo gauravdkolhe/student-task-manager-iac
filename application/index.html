@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Infrastructure as Code &bull; Cloudflare Workers + KV</span>
+      <h1>Student Task Manager</h1>
+      <p>Automated Serverless Architecture Provisioned by Terraform</p>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Total Tasks</h3>
+        <p id="stat-total">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Pending</h3>
+        <p id="stat-pending">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Completed</h3>
+        <p id="stat-completed">0</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Add New Student Task</h2>
+      <form id="task-form" onsubmit="createTask(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="task-title">Task Title</label>
+            <input type="text" id="task-title" placeholder="e.g., Submit Cloud Computing Assignment" required />
+          </div>
+          <div class="form-group">
+            <label for="task-priority">Priority</label>
+            <select id="task-priority">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="task-status">Status</label>
+            <select id="task-status">
+              <option value="Pending" selected>Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-primary">Add Task</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span>Task Records</span>
+        <button onclick="loadTasks()" class="btn-refresh">Refresh</button>
+      </h2>
+      <div id="task-list" class="task-list">
+        <div class="empty-state">Loading tasks...</div>
+      </div>
+    </div>
+
+    <footer>
+      Student Task Management Application &bull; Terraform IaC Project
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
