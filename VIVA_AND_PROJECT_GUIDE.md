@@ -1,31 +1,34 @@
 # MINI PROJECT EVALUATION & VIVA CHEAT SHEET
 
-## 1. Live Deployment Details
-- **Live Application URL**: [https://student-task-manager-production.co-2023-asdubey.workers.dev/](https://student-task-manager-production.co-2023-asdubey.workers.dev/)
-- **Compute Resource**: Cloudflare Worker (`student-task-manager-production`)
-- **Storage Resource**: Cloudflare Workers KV (`student_tasks-production` / ID: `162b466dc15947ae98351c9fc684a78c`)
-- **Binding**: `TASKS_KV`
+## 1. Live Deployment Details (Your Account: Gaurav Kolhe)
+- **Account ID**: `e446a5f48b54b32a95b2003b3f303c90`
+- **Cloudflare Worker**: `student-task-manager-production`
+- **Workers KV Namespace**: `student_tasks-production`
+- **KV Namespace ID**: `231a46a4379a4f7780eaa34665c3fd5d`
+- **Workers Subdomain**: `gauravkolhe.workers.dev`
+- **Live Application URL**: [https://student-task-manager-production.gauravkolhe.workers.dev/](https://student-task-manager-production.gauravkolhe.workers.dev/)
+- **KV Binding**: `TASKS_KV`
 - **Provisioning Engine**: HashiCorp Terraform v1.16.6
 
 ---
 
-## 2. Demonstrated CRUD Operations
-All 5 required project scenarios are pre-loaded and persisted in Workers KV:
-1. `T887B6A`: Prepare Project Presentation [Medium, In Progress]
-2. `T96E888`: Attend Project Viva [High, Pending]
-3. `TBD2377`: Submit Final Year Project Report [High, Pending]
-4. `TE266F0`: Complete Cloud Computing Assignment [High, Pending]
-5. `TECD735`: Upload Laboratory Assignment [Low, Completed]
+## 2. Pre-Populated Tasks in Workers KV
+All 5 required project scenario tasks have been provisioned in your KV namespace:
+1. Complete Cloud Computing Assignment [High, Pending]
+2. Prepare Project Presentation [Medium, In Progress]
+3. Submit Final Year Project Report [High, Pending]
+4. Attend Project Viva [High, Pending]
+5. Upload Laboratory Assignment [Low, Completed]
 
 ---
 
 ## 3. Mandatory Viva Answers (Quick Revision)
 
 ### Q1. What is Infrastructure as Code (IaC)?
-**Answer**: IaC is the practice of defining, provisioning, and managing cloud infrastructure using machine-readable configuration files (like Terraform's `.tf` files) rather than interactive graphical user interfaces or manual command scripts.
+**Answer**: IaC is the practice of defining, provisioning, and managing cloud infrastructure using machine-readable configuration files (like Terraform's `.tf` files) rather than interactive graphical dashboards or manual command scripts.
 
 ### Q2. Why is Terraform called a declarative IaC tool?
-**Answer**: In Terraform, we define the **desired end state** (what resources should exist, e.g. a Worker and a KV namespace), and Terraform calculates the necessary actions to achieve that state, unlike imperative tools which specify *how* to do it step-by-step.
+**Answer**: In Terraform, we declare the **desired end state** (what resources should exist, e.g. a Worker and a KV namespace), and Terraform calculates the necessary actions to achieve that state, unlike imperative tools which require step-by-step commands.
 
 ### Q3. What is Terraform State (`terraform.tfstate`)?
 **Answer**: Terraform state maps your configuration files to actual real-world resources in Cloudflare and tracks metadata. It allows Terraform to detect changes (drift) and plan updates without destroying unmodified resources.
