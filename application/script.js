@@ -99,3 +99,4 @@ function escapeHtml(text) {
 }
 
 loadTasks();
+
